@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+    <div class="sm:mx-auto sm:w-full sm:max-w-md bg-white p-8 rounded-lg shadow-md">
+      <h2 class="text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Seu Resultado Astrológico</h2>
+      <div class="mt-6 text-center">
+        <p class="text-lg text-gray-700">Olá, <strong class="font-semibold text-indigo-600">{{ cliente.nome }}</strong>!</p>
+        <p class="mt-4 text-xl text-gray-800">Seu signo solar é:</p>
+        <p class="mt-2 text-4xl font-bold tracking-tight text-indigo-700">{{ signo }}</p>
+      </div>
+    </div>
+</div>
+{% endblock %}
+
