@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import ClienteForm
 from .models import Cliente
-from .services import calcular_signo_solar
+from .services import calcular_signo_solar, obter_dados_signo
 
 def home_view(request):
     """
@@ -24,6 +24,7 @@ def resultado_view(request, cliente_id):
     Corresponde à Tarefa 1.3 do roadmap.
     """
     cliente = get_object_or_404(Cliente, pk=cliente_id)
-    signo = calcular_signo_solar(cliente.data_nascimento)
-    context = {'cliente': cliente, 'signo': signo}
+    signo_nome = calcular_signo_solar(cliente.data_nascimento)
+    dados_signo = obter_dados_signo(signo_nome)
+    context = {'cliente': cliente, 'signo': dados_signo}
     return render(request, 'astrologia/resultado.html', context)

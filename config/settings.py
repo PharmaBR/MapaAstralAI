@@ -32,6 +32,11 @@ if DEBUG:
 else:
     ALLOWED_HOSTS = []
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://766fc5208ba1.ngrok-free.app',
+]
+
+
 
 # Application definition
 
